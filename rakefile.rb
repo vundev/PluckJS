@@ -19,7 +19,13 @@ task :clean do |t|
 end
 
 task :default do |t|
+  # Merge pluck src with app src
   config = JSON.parse(IO.read('config.json'))
+  app_config = JSON.parse(IO.read('app_config.json'))
+  position = config.length - 1
+  app_config.each_with_index { |e, i|
+    config.insert(position + i, e)
+  }
   
   BuildTools.save(BuildTools.excludeSrc('compiler_options.js', 'debug'), 'bin/compiler_options.js')
   

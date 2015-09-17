@@ -3,5 +3,5 @@
  */
 
 function PluckMain() {
-    pl_trace('start pluck', new pl.Notification())
+    pl_trace('start pluck')
 }

@@ -13,10 +13,12 @@ UnitTest('ArrayToolsTest', {}, {
         var unflattened = [[1, 2, 3], [[4, 5], 6]]
         var flattened1 = [1, 2, 3, 4, 5, 6]
         var flattened2 = pl.ArrayTools.flatten(unflattened)
-        var length = flattened1.length
-        for (var i = 0; i < length; i++) {
-            assertEquals(flattened1[i], flattened2[i])
-        };
-        assertEquals(length, flattened2.length)
+        assertTrue('flattened arrays are equal', pl.ArrayTools.equals(flattened1, flattened2))
+    },
+    testMerge : function() {
+        var merged = pl.ArrayTools.merge([1, 2, 3], 2, [4, 5], 6)
+        assertTrue('merge arrays', pl.ArrayTools.equals(merged, [1, 2, 4, 5, 6, 3]))
+        merged = pl.ArrayTools.merge([1, 2, 3])
+        assertTrue('', pl.ArrayTools.equals(merged, [1, 2, 3]))
     }
 })
