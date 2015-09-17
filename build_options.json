@@ -1,0 +1,5 @@
+{
+	"pathToJSCompiler": "..\\compilers\\js\\compiler_java6.jar",
+	"pathToCSSCompiler": "..\\compilers\\css\\yuicompressor-2.4.8.jar",
+	"pathToJava": "C:\\Program Files (x86)\\Java\\jre6\\bin\\java.exe"
+}

@@ -1,0 +1,52 @@
+[
+	{
+		"src": "../lib/jquery-1.7.1.min.js",
+		"compress": false
+	}, {
+		"src": "../lib/jquerymx-3.2.custom.min.js",
+		"compress": false
+	}, {
+		"src": "../lib/jquery.mobile.custom.min.js",
+		"compress": false
+	}, {
+		"src": "./test.css",
+		"compress": true,
+		"type": "css"
+	}, {
+		"paralel": [
+			{
+				"src": "../src/pluck/utils/global.js",
+				"compress": true
+			}, {
+				"src": "../src/pluck/utils/ArrayTools.js",
+				"compress": true
+			}, {
+				"src": "../punit/errors/AssertError.js",
+				"compress": true
+			}, {
+				"src": "../punit/asserts.js",
+				"compress": true
+			}, {
+				"src": "../punit/core/UnitTest.js",
+				"compress": true
+			}, {
+				"src": "../punit/core/TestSuite.js",
+				"compress": true
+			}
+		]
+	}, {
+		"paralel": [
+			{
+				"src": "./pluck/utils/globalTest.js",
+				"compress": true
+			}, {
+				"src": "./pluck/utils/ArrayToolsTest.js",
+				"compress": true
+			}
+		]
+	}, {
+		"src": "./PluckMain.js",
+		"compress": true
+	}
+]
+

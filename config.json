@@ -1,0 +1,36 @@
+[
+	{
+		"src": "./lib/jquery-1.7.1.min.js",
+		"compress": false
+	}, {
+		"src": "./lib/jquerymx-3.2.custom.min.js",
+		"compress": false
+	}, {
+		"src": "./lib/jquery.mobile.custom.min.js",
+		"compress": false
+	}, {
+		"src": "./project.css",
+		"compress": true,
+		"type": "css"
+	}, {
+		"src": "http://cdnjs.cloudflare.com/ajax/libs/gsap/1.12.1/TweenMax.min.js",
+		"compress": false
+	}, {
+		"paralel": [
+			{
+				"src": "./src/pluck/utils/ArrayTools.js",
+				"compress": true
+			}, {
+				"src": "./src/pluck/utils/global.js",
+				"compress": true
+			}, {
+				"src": "./src/pluck/core/Notification.js",
+				"compress": true
+			}
+		]
+	}, {
+		"src": "./src/PluckMain.js",
+		"compress": true
+	}
+]
+
