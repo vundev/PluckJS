@@ -26,6 +26,15 @@
 			}, {
 				"src": "./src/pluck/core/Notification.js",
 				"compress": true
+			}, {
+				"src": "./src/pluck/core/Model.js",
+				"compress": true
+			}, {
+				"src": "./src/pluck/core/NotificationMap.js",
+				"compress": true
+			}, {
+				"src": "./src/pluck/core/ViewController.js",
+				"compress": true
 			}
 		]
 	}, {

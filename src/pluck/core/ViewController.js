@@ -19,7 +19,16 @@ $.Class('pl.ViewController', {
         return pl.ViewController._root
     },
     disposeRootController : function() {
-        //TODO: implement
+        var root = pl.ViewController._root
+        while (root.children.length > 0) {
+            root.removeChildViewController(root.children[0])
+        }
+        delete pl.ViewController._controllerMap[root.name]
+        pl.ViewController._notificationMap.unregister(root)
+        root.onUnregister()
+        if (root.autoDispose)
+            root.destroy()
+        pl.ViewController._root = null
     }
 }, (function() {
     return {
@@ -79,6 +88,10 @@ $.Class('pl.ViewController', {
         },
         destroy : function() {
             this.dispose()
+            if ('dispose' in _view)
+                _view.dispose()
+            if ('dispose' in _model)
+                _model.dispose()
             _view = null
             _model = null
         },
@@ -88,6 +101,9 @@ $.Class('pl.ViewController', {
             if (this.constructor._controllerMap[name] == undefined)
                 return null
             return this.constructor._controllerMap[name]
+        },
+        unique : function() {
+            return this.getController(this.name) || this
         }
     }
 })())

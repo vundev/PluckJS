@@ -16,5 +16,8 @@ UnitTest('globalTest', {}, {
         assertEquals(pl_getQualifiedClassName(5), 'number')
         assertEquals(pl_getQualifiedClassName('pluck'), 'string')
         assertEquals(pl_getQualifiedClassName(true), 'boolean')
+
+        $.Class('test.A')
+        assertEquals(pl_getQualifiedClassName(new test.A()), 'test.A')
     }
 })
