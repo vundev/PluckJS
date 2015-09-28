@@ -32,8 +32,17 @@
 			}, {
 				"src": "../punit/core/TestSuite.js",
 				"compress": true
+			}, {
+				"src": "../src/pluck/core/Notification.js",
+				"compress": true
+			}, {
+				"src": "../src/pluck/core/NotificationMap.js",
+				"compress": true
 			}
 		]
+	}, {
+		"src": "../src/pluck/core/ViewController.js",
+		"compress": true
 	}, {
 		"paralel": [
 			{
@@ -41,6 +50,15 @@
 				"compress": true
 			}, {
 				"src": "./pluck/utils/ArrayToolsTest.js",
+				"compress": true
+			}, {
+				"src": "./pluck/core/ViewControllerTest.js",
+				"compress": true
+			}, {
+				"src": "./pluck/core/TestNotificationsModel.js",
+				"compress": true
+			}, {
+				"src": "./pluck/core/TestNotificationsViewController.js",
 				"compress": true
 			}
 		]

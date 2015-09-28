@@ -5,6 +5,7 @@
 function PluckMain() {
     new TestSuite().run(
         new globalTest(),
-        new ArrayToolsTest()
+        new ArrayToolsTest(),
+        new ViewControllerTest()
     )
 }

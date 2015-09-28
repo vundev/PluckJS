@@ -88,12 +88,12 @@ $.Class('pl.ViewController', {
         },
         destroy : function() {
             this.dispose()
-            if ('dispose' in _view)
-                _view.dispose()
-            if ('dispose' in _model)
-                _model.dispose()
-            _view = null
-            _model = null
+            if (this._view && 'dispose' in this._view)
+                this._view.dispose()
+            if (this._model && 'dispose' in this._model)
+                this._model.dispose()
+            this._view = null
+            this._model = null
         },
         dispose : function() {
         },

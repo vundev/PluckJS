@@ -36,7 +36,7 @@ $.Class('pl.NotificationMap', {}, (function() {
             }
         },
         notify : function(notification) {
-            var recipients = getRecipients.call(this, notification.type)
+            var recipients = getRecipients.call(this, notification.name)
             if (recipients) {
                 recipients = recipients.concat()
                 var length = recipients.length
