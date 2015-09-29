@@ -16,6 +16,9 @@
 		"src": "http://cdnjs.cloudflare.com/ajax/libs/gsap/1.12.1/TweenMax.min.js",
 		"compress": false
 	}, {
+		"src": "./lib/pixi.min.js",
+		"compress": false
+	}, {
 		"paralel": [
 			{
 				"src": "./src/pluck/utils/ArrayTools.js",

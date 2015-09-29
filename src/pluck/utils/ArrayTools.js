@@ -34,6 +34,14 @@ $.Class('pl.ArrayTools', {
                 return false
         }
         return true
+    },
+    diff : function(array, compare) {
+        var unique = []
+        var length = array.length
+        for (var i = 0; i < length; i++)
+            if (!pl.ArrayTools.has(compare, array[i]))
+                unique.push(array[i])
+        return unique
     }
 }, {
     init : function() {

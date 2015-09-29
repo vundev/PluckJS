@@ -9,7 +9,7 @@ $.Class('pl.ViewController', {
     setRoot : function(root) {
         if (pl.ViewController._root)
             throw new Error('Root controller has been already set!')
-        pl.ViewController._root = value
+        pl.ViewController._root = root
         // register root controller for handling notifications
         pl.ViewController._controllerMap[pl.ViewController._root.name] = pl.ViewController._root
         pl.ViewController._notificationMap.register(pl.ViewController._root)

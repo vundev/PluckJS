@@ -1,1 +1,22 @@
-[]
+[
+	{
+		"paralel": [
+			{
+				"src": "./src/app/controllers/RootController.js",
+				"compress": false
+			}, {
+				"src": "./src/app/controllers/NavigationController.js",
+				"compress": false
+			}, {
+				"src": "./src/app/models/RootModel.js",
+				"compress": false
+			}, {
+				"src": "./src/app/controllers/ColorPickerController.js",
+				"compress": false
+			}, {
+				"src": "./src/app/models/ColorPickerModel.js",
+				"compress": false
+			}
+		]
+	}
+]

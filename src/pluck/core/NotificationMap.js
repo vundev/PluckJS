@@ -3,18 +3,18 @@
  */
 $.Class('pl.NotificationMap', {}, (function() {
 
-    function registerRecipient(notificationType, controller) {
-        if ( notificationType in this._data) {
-            var recipients = getRecipients.call(this, notificationType)
+    function registerRecipient(notificationName, controller) {
+        if ( notificationName in this._data) {
+            var recipients = getRecipients.call(this, notificationName)
             recipients.push(controller)
         } else {
-            this._data[notificationType] = []
-            this._data[notificationType][0] = controller
+            this._data[notificationName] = []
+            this._data[notificationName][0] = controller
         }
     }
 
-    function getRecipients(notificationType) {
-        return this._data[notificationType]
+    function getRecipients(notificationName) {
+        return this._data[notificationName]
     }
 
     return {

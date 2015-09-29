@@ -1,4 +1,9 @@
 body {
-	background: #333333;
-	color: #CCCCCC;
+	background:#333333;
+	color:#CCCCCC;
+}
+nav li {
+	display:inline;
+	background:#666666;
+	margin:10px;
 }
