@@ -5,7 +5,7 @@ pl.ViewController('app.RootController', {
     CHANGE : 'change'
 }, {
     init : function() {
-        this._super(null, new app.RootModel())
+        this._super(new app.Stage(), new app.RootModel())
         this.interests = [this.constructor.CHANGE]
     },
     handleNotification : function(notification) {
@@ -15,10 +15,10 @@ pl.ViewController('app.RootController', {
             }
             switch(this._model.currentPage) {
             case 'screen0':
-                this.setControllers(new app.NavigationController().unique())
+                this.setControllers(new app.NavigationController().unique(), new app.ScreenController().unique())
                 break
             case 'screen1':
-                this.setControllers(new app.NavigationController().unique(), new pl.ColorPickerController())
+                this.setControllers(new app.NavigationController().unique(), new app.ColorPickerController(), new app.ScreenController().unique())
                 break
             }
         }

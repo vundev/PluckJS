@@ -16,6 +16,18 @@
 			}, {
 				"src": "./src/app/models/ColorPickerModel.js",
 				"compress": false
+			}, {
+				"src": "./src/app/views/stage/Stage.js",
+				"compress": false
+			}, {
+				"src": "./src/app/views/color_picker/ColorPicker.js",
+				"compress": false
+			}, {
+				"src": "./src/app/views/screen/Screen.js",
+				"compress": false
+			}, {
+				"src": "./src/app/controllers/ScreenController.js",
+				"compress": false
 			}
 		]
 	}

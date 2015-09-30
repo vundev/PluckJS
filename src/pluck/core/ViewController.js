@@ -80,8 +80,8 @@ $.Class('pl.ViewController', {
                 delete this.constructor._controllerMap[child.name]
                 // removes the child from the notification map
                 this.constructor._notificationMap.unregister(child)
-                child.onUnregister()
-                if (this.autoDispose) {
+                child.onUnregister()              
+                if (child.autoDispose) {
                     child.destroy()
                 }
             }
