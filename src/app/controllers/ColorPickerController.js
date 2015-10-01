@@ -12,6 +12,7 @@ pl.ViewController('app.ColorPickerController', {
         this._model = new app.ColorPickerModel()
         this._view = new app.ColorPicker(this._model.id)
         this.parent._view.stage.addChild(this._view)
+        pl_trace('register', this._model.id)
 
         var that = this
         this._view.on(pl_isMobile() ? 'tap' : 'click', function(event) {
@@ -38,6 +39,7 @@ pl.ViewController('app.ColorPickerController', {
         })
     },
     dispose : function() {
+        pl_trace('dispose', this._model.id)
         var parent = this._view.parent
         parent.removeChild(this._view)
         this._view.removeAllListeners('click')

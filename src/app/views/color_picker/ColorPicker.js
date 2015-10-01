@@ -2,8 +2,6 @@
  * @author Nasko
  */
 
-var app = app || {}
-
 app.ColorPicker = function ColorPicker(id) {
     PIXI.Container.call(this);
     this.id = id

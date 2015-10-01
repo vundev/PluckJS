@@ -2,8 +2,6 @@
  * @author Nasko
  */
 
-var app = app || {}
-
 app.Screen = function Screen(label) {
     PIXI.Container.call(this);
     this._label = label
