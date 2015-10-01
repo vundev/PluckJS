@@ -1,7 +1,7 @@
 /**
  * @author Nasko
  */
-pl.ViewController('app.ColorPickerController', {
+pluck.ViewController('app.ColorPickerController', {
     CHANGE_COLOR : 'changeColor'
 }, {
     init : function() {

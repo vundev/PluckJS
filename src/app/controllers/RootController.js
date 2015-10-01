@@ -1,7 +1,7 @@
 /**
  * @author Nasko
  */
-pl.ViewController('app.RootController', {
+pluck.ViewController('app.RootController', {
     CHANGE : 'change'
 }, {
     init : function() {
@@ -24,12 +24,12 @@ pl.ViewController('app.RootController', {
         }
     },
     setControllers : function() {
-        var args = pl.ArrayTools.flatten(arguments)
+        var args = pluck.ArrayTools.flatten(arguments)
         var length = args.length
         for (var i = 0; i < length; i++)
             this.addChildViewController(args[i])
 
-        var rest = pl.ArrayTools.diff(this.children, args)
+        var rest = pluck.ArrayTools.diff(this.children, args)
         length = rest.length
         for ( i = 0; i < length; i++)
             this.removeChildViewController(rest[i])

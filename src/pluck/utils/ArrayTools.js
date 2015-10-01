@@ -1,7 +1,7 @@
 /**
  * @author nasko
  */
-$.Class('pl.ArrayTools', {
+$.Class('pluck.ArrayTools', {
     has : function(array, what) {
         return array.indexOf(what) > -1
     },
@@ -11,14 +11,14 @@ $.Class('pl.ArrayTools', {
         for (var i = 0; i < length; i++) {
             var item = array[i]
             if (pl_getQualifiedClassName(item) == 'array')
-                flattened = flattened.concat(pl.ArrayTools.flatten(item))
+                flattened = flattened.concat(pluck.ArrayTools.flatten(item))
             else
                 flattened.push(item)
         }
         return flattened
     },
     merge : function(array, position) {
-        var elements = pl.ArrayTools.flatten(Array.prototype.slice.call(arguments).slice(2))
+        var elements = pluck.ArrayTools.flatten(Array.prototype.slice.call(arguments).slice(2))
         var length = elements.length
         for (var i = 0; i < length; i++) {
             array.splice(position + i, 0, elements[i])
@@ -39,7 +39,7 @@ $.Class('pl.ArrayTools', {
         var unique = []
         var length = array.length
         for (var i = 0; i < length; i++)
-            if (!pl.ArrayTools.has(compare, array[i]))
+            if (!pluck.ArrayTools.has(compare, array[i]))
                 unique.push(array[i])
         return unique
     }

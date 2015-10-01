@@ -1,7 +1,7 @@
 /**
  * @author Nasko
  */
-$.Class('pl.Notification', {}, {
+$.Class('pluck.Notification', {}, {
     init : function(name, body) {
         this.name = name
         this.body = body

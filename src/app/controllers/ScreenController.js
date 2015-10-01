@@ -1,7 +1,7 @@
 /**
  * @author Nasko
  */
-pl.ViewController('app.ScreenController', {}, {
+pluck.ViewController('app.ScreenController', {}, {
     init : function() {
         this._super()
         this.interests = [app.ColorPickerController.CHANGE_COLOR]

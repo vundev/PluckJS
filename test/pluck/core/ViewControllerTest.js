@@ -7,13 +7,13 @@ UnitTest('ViewControllerTest', {}, {
         this._super()
     },
     setUp : function() {
-        this.instance = new pl.ViewController()
+        this.instance = new pluck.ViewController()
     },
     tearDown : function() {
         this.instance = null
     },
     shouldBeInstantiated : function() {
-        assertEquals(pl_getQualifiedClassName(this.instance), 'pl.ViewController')
+        assertEquals(pl_getQualifiedClassName(this.instance), 'pluck.ViewController')
     },
     /**
      *             3
@@ -29,12 +29,12 @@ UnitTest('ViewControllerTest', {}, {
      * Node 1 is removed.
      */
     removeChildViewControllerWithSuccessors : function() {
-        var child1 = new pl.ViewController(null, null, String(1))
-        var child2 = new pl.ViewController(null, null, String(2))
-        var child3 = new pl.ViewController(null, null, String(3))
-        var child4 = new pl.ViewController(null, null, String(4))
-        var child5 = new pl.ViewController(null, null, String(5))
-        var child6 = new pl.ViewController(null, null, String(6))
+        var child1 = new pluck.ViewController(null, null, String(1))
+        var child2 = new pluck.ViewController(null, null, String(2))
+        var child3 = new pluck.ViewController(null, null, String(3))
+        var child4 = new pluck.ViewController(null, null, String(4))
+        var child5 = new pluck.ViewController(null, null, String(5))
+        var child6 = new pluck.ViewController(null, null, String(6))
 
         // create the tree
         this.instance.addChildViewController(child1)
@@ -54,14 +54,14 @@ UnitTest('ViewControllerTest', {}, {
         assertTrue('child5 has not got any children', child5.children.length == 0)
     },
     removeChildViewController : function() {
-        var child = new pl.ViewController(null, null, 'child')
+        var child = new pluck.ViewController(null, null, 'child')
         this.instance.addChildViewController(child)
         this.instance.removeChildViewController(child)
         assertTrue('root node has not got any children', this.instance.children.length == 0)
         assertEquals(child.parent, null)
     },
     addChildViewController : function() {
-        var child = new pl.ViewController(null, null, 'child')
+        var child = new pluck.ViewController(null, null, 'child')
         this.instance.addChildViewController(child)
         assertTrue('root node has one child', this.instance.children.length == 1)
         assertEquals(child.parent, this.instance)

@@ -1,7 +1,7 @@
 /**
  * @author Nasko
  */
-pl.ViewController('TestNotificationsViewController', {
+pluck.ViewController('TestNotificationsViewController', {
     NOTIFICATION_TYPE : 'notificationType'
 }, {
     init : function() {

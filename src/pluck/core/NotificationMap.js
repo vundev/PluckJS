@@ -1,7 +1,7 @@
 /**
  * @author Nasko
  */
-$.Class('pl.NotificationMap', {}, (function() {
+$.Class('pluck.NotificationMap', {}, (function() {
 
     function registerRecipient(notificationName, controller) {
         if ( notificationName in this._data) {

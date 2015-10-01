@@ -1,11 +1,11 @@
 /**
  * @author Nasko
  */
-$.Class('pl.Model', {}, {
+$.Class('pluck.Model', {}, {
     init : function() {
     },
     sendNotification : function(type, body) {
-        pl.ViewController.getRoot().sendNotification(type, body)
+        pluck.ViewController.getRoot().sendNotification(type, body)
     },
     dispose : function() {
     }

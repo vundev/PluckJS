@@ -1,7 +1,7 @@
 /**
  * @author Nasko
  */
-pl.Model('app.RootModel', {}, {
+pluck.Model('app.RootModel', {}, {
     init : function() {
         this._super()
         this.currentPage = null

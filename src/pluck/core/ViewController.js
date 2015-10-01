@@ -2,33 +2,33 @@
  * @author Nasko
  */
 
-$.Class('pl.ViewController', {
+$.Class('pluck.ViewController', {
     _controllerMap : {},
-    _notificationMap : new pl.NotificationMap(),
+    _notificationMap : new pluck.NotificationMap(),
     _root : null,
     setRoot : function(root) {
-        if (pl.ViewController._root)
+        if (pluck.ViewController._root)
             throw new Error('Root controller has been already set!')
-        pl.ViewController._root = root
+        pluck.ViewController._root = root
         // register root controller for handling notifications
-        pl.ViewController._controllerMap[pl.ViewController._root.name] = pl.ViewController._root
-        pl.ViewController._notificationMap.register(pl.ViewController._root)
-        pl.ViewController._root.onRegister()
+        pluck.ViewController._controllerMap[pluck.ViewController._root.name] = pluck.ViewController._root
+        pluck.ViewController._notificationMap.register(pluck.ViewController._root)
+        pluck.ViewController._root.onRegister()
     },
     getRoot : function() {
-        return pl.ViewController._root
+        return pluck.ViewController._root
     },
     disposeRootController : function() {
-        var root = pl.ViewController._root
+        var root = pluck.ViewController._root
         while (root.children.length > 0) {
             root.removeChildViewController(root.children[0])
         }
-        delete pl.ViewController._controllerMap[root.name]
-        pl.ViewController._notificationMap.unregister(root)
+        delete pluck.ViewController._controllerMap[root.name]
+        pluck.ViewController._notificationMap.unregister(root)
         root.onUnregister()
         if (root.autoDispose)
             root.destroy()
-        pl.ViewController._root = null
+        pluck.ViewController._root = null
     }
 }, (function() {
     return {
@@ -44,7 +44,7 @@ $.Class('pl.ViewController', {
             this.autoDispose = true
         },
         sendNotification : function(type, body) {
-            this.constructor._notificationMap.notify(new pl.Notification(type, body))
+            this.constructor._notificationMap.notify(new pluck.Notification(type, body))
         },
         handleNotification : function() {
         },
@@ -53,7 +53,7 @@ $.Class('pl.ViewController', {
         onUnregister : function() {
         },
         hasChildViewController : function(child) {
-            return pl.ArrayTools.has(this.children, child)
+            return pluck.ArrayTools.has(this.children, child)
         },
         addChildViewController : function(child) {
             if (!this.hasChildViewController(child)) {

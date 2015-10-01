@@ -1,7 +1,7 @@
 /**
  * @author Nasko
  */
-pl.ViewController('app.NavigationController', {}, {
+pluck.ViewController('app.NavigationController', {}, {
     init : function() {
         this._super()
     },

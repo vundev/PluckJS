@@ -21,7 +21,7 @@ $.Class('UnitTest', {
         var prototype = this.constructor.prototype
         var reserved = ['init', 'setUp', 'tearDown', 'run', 'constructor', 'Class', 'proxy', 'callback']
         for (var key in prototype) {
-            if (!pl.ArrayTools.has(reserved, key) && typeof prototype[key] == 'function') {
+            if (!pluck.ArrayTools.has(reserved, key) && typeof prototype[key] == 'function') {
                 this.total++
                 this.setUp()
                 try {
