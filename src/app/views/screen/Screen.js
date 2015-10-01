@@ -14,7 +14,7 @@ app.Screen.prototype.constructor = app.Screen;
 
 app.Screen.prototype.draw = function() {
     this._background = new PIXI.Graphics()
-    this._background.beginFill(0xff0000)
+    this._background.beginFill(0xfff000)
     this._background.drawRect(0, 0, 200, 200)
     this._background.endFill()
 

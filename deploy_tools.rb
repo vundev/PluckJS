@@ -14,13 +14,10 @@ class DeployTools
 =end
   def traverse(root, callback = nil)
     Dir.glob(root + '/*').each{|entity|
-      # checks whether an entity is file or directory
-      if Dir.exists?(entity)     
-        puts 'traverse ' + entity
-        if callback != nil
-          callback.call(self, entity)
-        end
-      end 
+      isFileOrDir = Dir.exists?(entity) ? true : false
+      if callback != nil
+          callback.call(isFileOrDir, entity)
+      end
       self.traverse(entity, callback)
     }
   end
@@ -43,5 +40,26 @@ class DeployTools
         puts '[WARNING] ' + error.to_s()
       end
     end
+  end
+  
+  def external_dir_exist(path)
+    begin
+      return @ftp.lstat!(path).directory?
+    rescue Exception => e
+      return false
+    end
+    return false
+  end
+  
+  def upload(local, remote) 
+    callback = Proc.new do |isFileOrDir, entity|
+      relativePath = entity[local.length...entity.length]
+      if !isFileOrDir 
+        @ftp.upload!(entity, remote + relativePath)
+      elsif !self.external_dir_exist(remote + relativePath)
+        @ftp.mkdir(remote + relativePath)
+      end
+    end
+    self.traverse(local, callback)    
   end
 end

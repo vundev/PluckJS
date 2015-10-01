@@ -6,14 +6,18 @@ root = File.dirname(__FILE__) + '/'
 require root + 'build_tools'
 require root + 'deploy_tools'
 
-deployDefaultCredentials = {
-  'host' => '192.168.100.13',
-  'usern' => 'winagain',
-  'port' => 22,
-  'pass' => 'b9c3b7c5d',
-  'root' => './res/PluckJS'
-}
-
+credentials = JSON.parse(IO.read('credentials.json'))
+deployDefaultCredentials = credentials['devel']
+=begin
+task :test do |t|
+  uploader = DeployTools.new(nil)
+  def callback(isFileOrDir, entity)
+    p (isFileOrDir ? 'dir ' : 'file ') + entity
+    p entity['bin'.length...entity.length]
+  end
+  uploader.traverse('bin', method(:callback))
+end
+=end
 task :clean do |t|
   FileUtils.rm_rf(Dir.glob('bin/*'))
 end
@@ -94,6 +98,7 @@ task :deploy, [:options] do |t, args|
   deployDefaultCredentials['root'] = ENV['root'] || deployDefaultCredentials['root']
   deployDefaultCredentials = deployDefaultCredentials.merge(args.options || {} )
   Net::SFTP.start(deployDefaultCredentials['host'], deployDefaultCredentials['usern'], :port => deployDefaultCredentials['port'], :password => deployDefaultCredentials['pass']) do |sftp|
-    sftp.upload!('bin', deployDefaultCredentials['root'])
+    uploader = DeployTools.new(sftp)
+    uploader.upload('bin', deployDefaultCredentials['root'])
   end
 end
